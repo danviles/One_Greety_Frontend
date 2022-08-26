@@ -75,6 +75,7 @@ const EspacioProvider = ({ children }) => {
 
   const editarEspacio = async (espacio, img) => {
     setCargandocomp(true);
+    console.log(espacio)
 
     try {
       const token = localStorage.getItem("token");

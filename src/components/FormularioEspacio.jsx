@@ -54,15 +54,17 @@ const FormularioEspacio = () => {
       return;
     }
 
-    if (esp_img.size > 5000000) {
-      mostrarAlerta({
-        msg: "La imagen es muy pesada",
-        error: true,
-      });
-      return;
+    if ( esp_img !== undefined ) {
+
+      if (esp_img.size > 5000000) {
+        mostrarAlerta({
+          msg: "La imagen es muy pesada",
+          error: true,
+        });
+        return;
+      }
     }
 
-    // Pasar los datos hacia el provider
     await submitEspacio(
       { id, esp_nombre, esp_descripcion, esp_img_id, esp_region, esp_acceso }, esp_img );
 
@@ -176,7 +178,8 @@ const FormularioEspacio = () => {
             <div className="flex items-center">
               <Switch
                 checked={esp_acceso}
-                onChange={setAcceso}
+                onChange={() => setAcceso(!esp_acceso)}
+                value={esp_acceso}
                 className={`
                 ${
                   esp_acceso
