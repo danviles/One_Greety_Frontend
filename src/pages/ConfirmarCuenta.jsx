@@ -19,9 +19,9 @@ const ConfirmarCuenta = () => {
         // }, 3000);
       } catch (error) {
         // setAlerta({ msg: error.response.data.msg, error: true });
-        setTimeout(() => {
-          navigate('/');
-        }, 1000);
+        // setTimeout(() => {
+        //   navigate('/');
+        // }, 1000);
       }
     }
     confirmarCuenta();
