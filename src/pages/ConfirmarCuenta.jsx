@@ -14,9 +14,9 @@ const ConfirmarCuenta = () => {
       try {
         const { data } = await clienteAxios.get(`/usuarios/confirmar/${id}`);
         setAlerta({ msg: data.msg, error: false });
-        setTimeout(() => {
-          navigate('/');
-        }, 3000);
+        // setTimeout(() => {
+        //   navigate('/');
+        // }, 3000);
       } catch (error) {
         // setAlerta({ msg: error.response.data.msg, error: true });
         setTimeout(() => {
@@ -32,6 +32,7 @@ const ConfirmarCuenta = () => {
     <div>
       <h1>Confirmar Cuenta</h1>
       {alerta.msg && <Alerta alerta={alerta} />}
+      <p>Vuelve a la app o a la pagina web para iniciar sesión</p>
     </div>
   )
 }

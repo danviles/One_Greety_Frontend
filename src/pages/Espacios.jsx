@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import PreviewEspacio from "../components/PreviewEspacio";
 import useEspacio from "../hooks/useEspacio";
-import useAuth from "../hooks/useAuth";
 
 const Espacios = () => {
   const { espacios } = useEspacio();
