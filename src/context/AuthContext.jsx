@@ -54,6 +54,7 @@ const AuthProvider = ({ children }) => {
       if (!token) return;
 
       if (img !== undefined) {
+        console.log(img)
         let formData = new FormData();
         formData.append("file", img);
         formData.append("imgId", usuario.usu_img_id);
@@ -76,7 +77,9 @@ const AuthProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       };
-      
+
+      usuario.usu_email = usuario.usu_email.toLowerCase();
+
       const { data } = await clienteAxios.put(
         `/usuarios/perfil/${auth._id}`,
         usuario,

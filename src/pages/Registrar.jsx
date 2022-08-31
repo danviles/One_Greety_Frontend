@@ -23,6 +23,16 @@ const Registrar = () => {
       return;
     }
 
+    if (usu_nombre.length > 20 || usu_nombre.length < 3) {
+      setAlerta({
+        msg: "El nombre debe tener entre 3 y 20 caracteres.",
+        error: true,
+      });
+      return;
+    }
+
+    setEmail(usu_email.toLowerCase());
+
     if (usu_password !== password2) {
       setAlerta({
         msg: "Las contraseñas no coinciden.",

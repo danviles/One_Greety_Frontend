@@ -31,10 +31,18 @@ const FormularioEditarPerfil = () => {
 
     if ([usu_nombre].includes("")) {
       mostrarAlerta({
-        msg: "Todos los campos son obligatorios",
+        msg: "Nombre no puede estar vacio",
         error: true,
       });
 
+      return;
+    }
+
+    if (usu_nombre.length > 20 || usu_nombre.length < 3) {
+      setAlerta({
+        msg: "El nombre debe tener entre 3 y 20 caracteres.",
+        error: true,
+      });
       return;
     }
 
@@ -78,6 +86,8 @@ const FormularioEditarPerfil = () => {
   };
 
   const handleImage = (e) => {
+    // console.log(e.target.files[0])
+    // console.log(URL.createObjectURL(e.target.files[0]))
     setImgPreview(URL.createObjectURL(e.target.files[0]));
     setImgPerfil(e.target.files[0]);
   };

@@ -22,6 +22,8 @@ const Login = () => {
       return;
     }
 
+    setEmail(usu_email.toLowerCase());
+
     try {
       const { data } = await clienteAxios.post(`/usuarios/login`, { usu_email, usu_password });
       localStorage.setItem("token", data.usu_token);

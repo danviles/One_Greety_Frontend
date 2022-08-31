@@ -21,6 +21,8 @@ const OlvidePassword = () => {
       return;
     }
 
+    setEmail(usu_email.toLowerCase());
+
     try {
       const { data } = await clienteAxios.post(`/usuarios/recuperar-password`,{ usu_email });
       setAlerta({
