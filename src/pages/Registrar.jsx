@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Carousel from "../components/CarouselComponent";
 import Alerta from "../components/AlertaComponent";
 import clienteAxios from "../config/clienteAxios";
@@ -11,6 +11,7 @@ const Registrar = () => {
   const [usu_password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const [alerta, setAlerta] = useState({});
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -57,10 +58,13 @@ const Registrar = () => {
         usu_email,
         usu_password,
       });
+      setTimeout(() => {
       setAlerta({
         msg: data.msg,
         error: false,
       });
+      navigate('/login');
+      }, 3000);
     } catch (error) {
       setAlerta({
         msg: error.response.data.msg,
