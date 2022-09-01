@@ -5,7 +5,6 @@ import Alerta from "../components/AlertaComponent";
 import clienteAxios from "../config/clienteAxios";
 
 const Registrar = () => {
-
   const [usu_nombre, setNombre] = useState("");
   const [usu_email, setEmail] = useState("");
   const [usu_password, setPassword] = useState("");
@@ -32,8 +31,6 @@ const Registrar = () => {
       return;
     }
 
-    setEmail(usu_email.toLowerCase());
-
     if (usu_password !== password2) {
       setAlerta({
         msg: "Las contraseñas no coinciden.",
@@ -50,20 +47,18 @@ const Registrar = () => {
       return;
     }
 
-    setAlerta({});
-    
     try {
-      const { data } = await clienteAxios.post('/usuarios', {
+      const { data } = await clienteAxios.post("/usuarios", {
         usu_nombre,
         usu_email,
         usu_password,
       });
-      setTimeout(() => {
       setAlerta({
         msg: data.msg,
         error: false,
       });
-      navigate('/login');
+      setTimeout(() => {
+        navigate("/");
       }, 3000);
     } catch (error) {
       setAlerta({
@@ -72,6 +67,8 @@ const Registrar = () => {
       });
     }
   };
+
+  const { msg } = alerta;
 
   return (
     <section className="flex items-center justify-center">
@@ -86,7 +83,7 @@ const Registrar = () => {
             cuenta.
           </p>
 
-          {alerta.msg && <Alerta alerta={alerta} />}
+          {msg && <Alerta alerta={alerta} />}
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input

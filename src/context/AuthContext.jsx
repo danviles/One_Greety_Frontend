@@ -78,8 +78,6 @@ const AuthProvider = ({ children }) => {
         },
       };
 
-      usuario.usu_email = usuario.usu_email.toLowerCase();
-
       const { data } = await clienteAxios.put(
         `/usuarios/perfil/${auth._id}`,
         usuario,

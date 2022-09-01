@@ -46,16 +46,16 @@ const FormularioEspacio = () => {
       return;
     }
 
-    if (esp_nombre.length > 20 || esp_nombre.length < 3) {
-      setAlerta({
-        msg: "El nombre del espacio debe tener entre 3 y 20 caracteres.",
+    if (esp_nombre.length > 30 || esp_nombre.length < 3) {
+      mostrarAlerta({
+        msg: "El nombre del espacio debe tener entre 3 y 30 caracteres.",
         error: true,
       });
       return;
     }
 
     if (esp_descripcion.length > 500 || esp_descripcion.length < 100) {
-      setAlerta({
+      mostrarAlerta({
         msg: "La descripción del espacio debe tener entre 100 y 500 caracteres.",
         error: true,
       });
