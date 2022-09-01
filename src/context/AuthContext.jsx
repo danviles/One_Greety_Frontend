@@ -32,6 +32,8 @@ const AuthProvider = ({ children }) => {
         navigate('/espacios');
       } catch (error) {
         setAuth({});
+        localStorage.removeItem("token");
+        navigate('/');
       }
       setCargando(false);
     };
