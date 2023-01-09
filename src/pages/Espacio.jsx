@@ -87,9 +87,7 @@ const Espacio = () => {
           <div className="flex flex-col basis-11/12 ">
             <p className="font-bold text-xl">{espacio.esp_nombre}</p>
             <p className="text-ellipsis overflow-hidden">
-              {espacio.esp_descripcion?.length > 300
-                ? `${espacio.esp_descripcion.substring(0, 330)}...`
-                : espacio.esp_descripcion}
+              {espacio.esp_descripcion}
             </p>
           </div>
           {/* Tags */}
