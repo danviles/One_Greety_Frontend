@@ -3,6 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import db1 from "../images/db1.jpg";
 import db2 from "../images/db2.jpg";
 import db3 from "../images/db3.jpg";
+import { Link } from "react-router-dom";
 
 const CarouselComponent = () => {
   return (
@@ -16,9 +17,11 @@ const CarouselComponent = () => {
       emulateTouch={true}
       stopOnHover={true}
     >
-      <div>
-        <img className="rounded-2xl" src={db1} />
-      </div>
+      <a href="https://drive.google.com/u/2/uc?id=1zhGiAELnr8H227NqmAuJQvM6cX8UwTYx&export=download">
+        <div>
+          <img className="rounded-2xl" src={db1} />
+        </div>
+      </a>
       <div>
         <img className="rounded-2xl" src={db2} />
       </div>
