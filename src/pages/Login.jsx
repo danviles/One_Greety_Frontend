@@ -45,7 +45,7 @@ const Login = () => {
         <div className="lg:w-1/2 px-8 lg:px-16">
           <h2 className="font-bold text-2xl text-gray-800">Iniciar Sesión</h2>
           <p className="text-xs mt-4 text-gray-800">
-            Si ya estas registrado, ingresa tus datos para iniciar sesión.
+            Si ya estás registrado, ingresa tus datos para iniciar sesión.
           </p>
           { msg && <Alerta alerta={alerta} /> }
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">

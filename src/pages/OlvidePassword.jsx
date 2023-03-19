@@ -52,7 +52,7 @@ const OlvidePassword = () => {
             Recuperar contraseña
           </h2>
           <p className="text-xs mt-4 text-gray-800">
-            Ingresa tu correo electrónico y si estas registrado recibirás un
+            Ingresa tu correo electrónico y si estás registrado recibirás un
             email con los pasos para recuperar tu contraseña.
           </p>
 

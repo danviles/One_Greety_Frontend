@@ -165,7 +165,7 @@ const FormularioEspacio = () => {
             className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="region"
           >
-            Region
+            Región
           </label>
           <select
             className="border w-4/5 p-2 rounded-md shadow"
@@ -211,7 +211,7 @@ const FormularioEspacio = () => {
                     esp_acceso ? "translate-x-20 -mr-3" : "translate-x-1 mr-3"
                   } inline-block h-4 w-7 transform rounded-full bg-white transition-transform`}
                 />
-                {`${esp_acceso ? "Publico" : "Privado"}`}
+                {`${esp_acceso ? "Público" : "Privado"}`}
               </Switch>
             </div>
           </Switch.Group>
