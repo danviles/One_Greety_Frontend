@@ -17,7 +17,7 @@ const CarouselComponent = () => {
       emulateTouch={true}
       stopOnHover={true}
     >
-      <a href="https://drive.google.com/u/2/uc?id=1zhGiAELnr8H227NqmAuJQvM6cX8UwTYx&export=download">
+      <a href="https://drive.google.com/file/d/1zb0bt7B4IqIqodN4U0QP6IKOCP9yCio3/view?usp=sharing">
         <div>
           <img className="rounded-2xl" src={db1} />
         </div>
